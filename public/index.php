@@ -4,7 +4,6 @@
   mb_internal_encoding("UTF-8");
 
   require_once __DIR__.'/../apps/Bootstrap.php';
-
   $app = new Bootstrap('frontend');
   $app->init();
 

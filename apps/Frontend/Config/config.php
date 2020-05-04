@@ -1,6 +1,6 @@
 <?php
 
-$config = __DIR__.'/../../../config/config.php';
+$config = require __DIR__.'/../../../config/config.php';
 
 $module_config = array(
   'application' => array(

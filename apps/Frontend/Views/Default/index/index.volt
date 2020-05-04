@@ -1,4 +1,4 @@
 {% extends 'layout.volt' %}
 {% block body %}
-I did it !
+<h2>I did it !</h2>
 {% endblock %}

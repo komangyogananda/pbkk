@@ -1,20 +1,16 @@
 <?php
-
-use Phalcon\Mvc\Router;
-
 $di['router'] = function () use (
   $default_module,
   $modules,
   $di,
   $config
-){
-  $router = new Router(false);
+) {
+  $router = new \Phalcon\Mvc\Router(false);
   $router->clear();
-  $moduleRouting = __DIR__.'/../apps/'.ucfirst($default_module).'/Config/routing.php';
-  echo $moduleRouting;
-  if (file_exists($moduleRouting) && is_file($moduleRouting)){
+  $moduleRouting = __DIR__ . '/../apps/' . ucfirst($default_module) . '/Config/routing.php';
+  if (file_exists($moduleRouting) && is_file($moduleRouting)) {
     $router = include $moduleRouting;
-  }else{
+  } else {
     $router->add('#^/(|/)$#', array(
       'module' => $default_module,
       'controller' => 'index',

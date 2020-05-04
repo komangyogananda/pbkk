@@ -1,17 +1,24 @@
 <?php
-
 namespace App\Frontend;
-
 use Phalcon\Mvc\ModuleDefinitionInterface;
-use Phalcon\DiInterface;
+use Phalcon\Di\DiInterface;
 
-class Module implements  ModuleDefinitionInterface{
+class Module implements ModuleDefinitionInterface
+{
+  /**
+   * Registers the module auto-loader
+   */
+  public function registerAutoloaders(DiInterface $di = null) {}
 
-  public function registerAutoloaders(DiInterface $dependencyInjector = null){}
-
-  public function registerServices(DiInterface $dependencyInjector){
-    $config = include __DIR__.'/Config/config.php';
+  /**
+   * Registers the module-only services
+   *
+   * @param Phalcon\DI $di
+   */
+  public function registerServices(DiInterface $di)
+  {
+    $config = include __DIR__ . "/Config/config.php";
     $di['config'] = $config;
-    include __DIR__.'Config/services.php';
+    include __DIR__ . "/Config/services.php";
   }
 }
