@@ -20,7 +20,7 @@ class Bootstrap extends Application{
       ),
       "backoffice" => array(
         "className" => 'App\Backoffice\Module',
-        'path' => __DIR__.'Backoffice/Module.php'
+        'path' => __DIR__.'/Backoffice/Module.php'
       ),
       'frontend' => array(
         'className' => 'App\Frontend\Module',
@@ -46,6 +46,7 @@ class Bootstrap extends Application{
     $debug->listen();
     $this->_registerServices();
     $this->registerModules($this->modules);
+
     $this->handle($_SERVER["REQUEST_URI"])->send();
   }
 }

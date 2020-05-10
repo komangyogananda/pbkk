@@ -11,6 +11,14 @@ return new Config(array(
       'cache' => array(
         'dir' => __DIR__.'/../cache/volt/',
       )
-    )
-  ));
+    ),
+    'database' => array(
+      'adapter' => 'Mysql',
+      'host' => 'localhost',
+      'username' => 'learning_phalcon',
+      'password' => 'password123!',
+      'dbname' => 'learning_phalcon',
+    ),
+
+));
 
